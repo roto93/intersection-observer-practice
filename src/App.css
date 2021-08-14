@@ -32,7 +32,24 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.main {
+  height: 100vh;
+  background-color: #fff;
+  transition: 0.5s all;
+  overflow: hidden;
+}
+
+.main.active {
+  /* background-color: #555; */
+}
+
+.main img {
+  transition: 1s all;
 }

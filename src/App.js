@@ -12,7 +12,7 @@ function App() {
     console.log(ref, isVisible)
     let prevWindowY = 0
     const onWindowScroll = (e) => {
-      if (!isVisible) return
+      if (!isVisible) return setIsScrollDown(true)
       const currentWindowY = window.pageYOffset
       setIsScrollDown(currentWindowY > prevWindowY)
       console.log(isScrollDown)
@@ -51,7 +51,7 @@ function App() {
       <main ref={ref} className={`main ${isVisible ? 'active' : ''}`} >
         <img style={{ opacity: isVisible ? 1 : 0, transform: `translateX(${isVisible ? '0' : '100px'})` }} src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" alt="" />
       </main>
-      <nav className="nav">
+      <nav className={`nav ${isScrollDown ? 'hidden' : ''}`}>
         <ul className="nav__list">
           <li className="nav__item">Home</li>
           <li className="nav__item">About</li>
